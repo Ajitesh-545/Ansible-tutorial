@@ -1,0 +1,19 @@
+---
+- name: File module
+  hosts: all
+
+  tasks:
+  - name: creating files
+    file:
+      path: /etc/nginx/new-conf.yml
+      state: touch
+      owner: origin
+      group: origin
+      mode: u=rwx,g=rw,o=rw
+
+  - name: create directory
+    file: 
+      path: /etc/nginx/plugin
+      state: absent 
+
+ 

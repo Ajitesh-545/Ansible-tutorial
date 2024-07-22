@@ -1,0 +1,16 @@
+---
+- name: CRON playbook
+  hosts: all
+
+  tasks:
+  - name: Cron job task 
+    cron: 
+      name: run test script
+      minute: 0
+      hour: 12
+      day: 5
+      month: "*"
+      weekday: "*" 
+      user: origin
+      job: /home/ajitesh/myapps/ansible_tut/playbooks/script.sh
+

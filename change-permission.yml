@@ -1,0 +1,9 @@
+---
+- name: Change Permission of files
+  hosts: all
+
+  tasks:
+  - name: change Permission
+    file:
+      path: /etc/nginx/new-conf.yml
+      mode: u=rw,g=rw,o=r

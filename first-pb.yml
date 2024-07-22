@@ -1,0 +1,9 @@
+---
+- name: Basic Playbook
+  hosts: servers
+
+  tasks: 
+  - name: test-connectivity
+    ping:
+  - name: Print output
+    debug: msg="I am awesome"

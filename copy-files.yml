@@ -1,0 +1,14 @@
+---
+
+- name: Files sharing
+  hosts: servers
+
+  tasks:
+  - name: copy files
+    copy:
+      src: /home/ajitesh/myapps/ansible_tut/playbooks/temp
+      dest: /etc/nginx 
+      owner: origin
+      group: origin
+      mode: 0766
+      backup: true

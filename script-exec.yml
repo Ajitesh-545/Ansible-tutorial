@@ -1,0 +1,26 @@
+---
+- name: Script execution ansible
+  hosts: all
+
+  tasks: 
+  - name: create directory
+    file:
+      path: /tmp/scripts
+      state: directory 
+
+  - name: send the script to above directory
+    copy:
+      src: /home/ajitesh/myapps/ansible_tut/playbooks/script.sh
+      dest: /tmp/scripts/
+      owner: root
+      group: root
+      mode: 766    
+      backup: true
+
+  - name: execute the script
+    shell: ./script.sh >> script.log
+    args:
+      chdir: /tmp/scripts/
+      creates: script.log
+      
+

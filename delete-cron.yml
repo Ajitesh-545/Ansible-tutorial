@@ -1,0 +1,13 @@
+---
+- name: Delete Cron playbook
+  hosts: all
+
+  tasks:
+    - name: Delete cron job task
+      cron:
+      # the name of the cron job should be same as the cron actual name that is present in the servers
+        name: run test script
+        state: absent
+        user: origin
+
+
